@@ -1,5 +1,10 @@
 # Claude Agents Monitor
 
+[![CI](https://github.com/edtroleis/vscode-claude-agents-monitor/actions/workflows/ci.yml/badge.svg)](https://github.com/edtroleis/vscode-claude-agents-monitor/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/edtroleis.claude-agents-monitor)](https://marketplace.visualstudio.com/items?itemName=edtroleis.claude-agents-monitor)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/edtroleis.claude-agents-monitor)](https://marketplace.visualstudio.com/items?itemName=edtroleis.claude-agents-monitor)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > See your [Claude Code](https://claude.com/claude-code) subagents — and which ones are working right now — from a dedicated VS Code sidebar.
 
 Claude Code lets you define **subagents** (specialized agents in `~/.claude/agents`). This
