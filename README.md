@@ -1,8 +1,8 @@
 # Claude Agents Monitor
 
 [![CI](https://github.com/edtroleis/vscode-claude-agents-monitor/actions/workflows/ci.yml/badge.svg)](https://github.com/edtroleis/vscode-claude-agents-monitor/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/visual-studio-marketplace/v/edtroleis.claude-agents-monitor)](https://marketplace.visualstudio.com/items?itemName=edtroleis.claude-agents-monitor)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/edtroleis.claude-agents-monitor)](https://marketplace.visualstudio.com/items?itemName=edtroleis.claude-agents-monitor)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/edtroleis.claude-code-agents-monitor)](https://marketplace.visualstudio.com/items?itemName=edtroleis.claude-code-agents-monitor)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/edtroleis.claude-code-agents-monitor)](https://marketplace.visualstudio.com/items?itemName=edtroleis.claude-code-agents-monitor)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > See your [Claude Code](https://claude.com/claude-code) subagents — and which ones are working right now — from a dedicated VS Code sidebar.
@@ -47,7 +47,7 @@ hook on the `Task` tool (the tool Claude uses to launch subagents). Add this to
       {
         "matcher": "Task",
         "hooks": [
-          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-agents-monitor-*/hooks/agent-status-hook.js pre 2>/dev/null || true" }
+          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-code-agents-monitor-*/hooks/agent-status-hook.js pre 2>/dev/null || true" }
         ]
       }
     ],
@@ -55,7 +55,7 @@ hook on the `Task` tool (the tool Claude uses to launch subagents). Add this to
       {
         "matcher": "Task",
         "hooks": [
-          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-agents-monitor-*/hooks/agent-status-hook.js post 2>/dev/null || true" }
+          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-code-agents-monitor-*/hooks/agent-status-hook.js post 2>/dev/null || true" }
         ]
       }
     ]

@@ -1,5 +1,5 @@
 {
-  "name": "claude-agents-monitor",
+  "name": "claude-code-agents-monitor",
   "displayName": "Claude Agents Monitor",
   "description": "List your Claude Code subagents and see which ones are running right now, from a dedicated sidebar view.",
   "version": "0.0.1",

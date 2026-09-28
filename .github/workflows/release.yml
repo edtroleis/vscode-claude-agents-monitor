@@ -46,7 +46,7 @@ jobs:
 
       - name: Package
         if: steps.status.outputs.published == 'false'
-        run: npx vsce package --out "claude-agents-monitor-${{ steps.status.outputs.version }}.vsix"
+        run: npx vsce package --out "claude-code-agents-monitor-${{ steps.status.outputs.version }}.vsix"
 
       # Two ways to authenticate, see CONTRIBUTING.md > Releases:
       # - Microsoft Entra ID (recommended): the variables AZURE_CLIENT_ID and
@@ -77,7 +77,7 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
           USE_ENTRA: ${{ vars.AZURE_CLIENT_ID != '' }}
-          VSIX: claude-agents-monitor-${{ steps.status.outputs.version }}.vsix
+          VSIX: claude-code-agents-monitor-${{ steps.status.outputs.version }}.vsix
         run: |
           if [ "$USE_ENTRA" = "true" ]; then
             npx vsce publish --azure-credential --packagePath "$VSIX"
@@ -103,8 +103,8 @@ jobs:
           ' CHANGELOG.md > notes.md
           [ -s notes.md ] || echo "See CHANGELOG.md." > notes.md
           if gh release view "v$VERSION" >/dev/null 2>&1; then
-            gh release upload "v$VERSION" "claude-agents-monitor-$VERSION.vsix" --clobber
+            gh release upload "v$VERSION" "claude-code-agents-monitor-$VERSION.vsix" --clobber
           else
-            gh release create "v$VERSION" "claude-agents-monitor-$VERSION.vsix" \
+            gh release create "v$VERSION" "claude-code-agents-monitor-$VERSION.vsix" \
               --target "$GITHUB_SHA" --title "Claude Agents Monitor $VERSION" --notes-file notes.md
           fi
