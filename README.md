@@ -1,4 +1,4 @@
-# Claude Agents Monitor
+# Claude Code Agents Monitor
 
 [![CI](https://github.com/edtroleis/vscode-claude-agents-monitor/actions/workflows/ci.yml/badge.svg)](https://github.com/edtroleis/vscode-claude-agents-monitor/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/visual-studio-marketplace/v/edtroleis.claude-code-agents-monitor)](https://marketplace.visualstudio.com/items?itemName=edtroleis.claude-code-agents-monitor)
