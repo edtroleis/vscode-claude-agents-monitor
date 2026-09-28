@@ -1,0 +1,25 @@
+# Source and build config — the compiled output in out/ is what ships.
+src/**
+.vscode/**
+.github/**
+node_modules/**
+
+tsconfig.json
+eslint.config.mjs
+.mocharc.json
+.gitignore
+.editorconfig
+
+# Test artifacts
+out/test/**
+**/*.map
+**/*.test.js
+
+# Docs kept out of the package (README, LICENSE, CHANGELOG are included by vsce)
+CONTRIBUTING.md
+SECURITY.md
+media/icon.svg
+
+# Misc
+**/.DS_Store
+*.vsix

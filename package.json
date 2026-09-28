@@ -1,0 +1,115 @@
+{
+  "name": "claude-agents-monitor",
+  "displayName": "Claude Agents Monitor",
+  "description": "List your Claude Code subagents and see which ones are running right now, from a dedicated sidebar view.",
+  "version": "0.0.1",
+  "publisher": "edtroleis",
+  "license": "MIT",
+  "author": {
+    "name": "Edtroleis"
+  },
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "agents",
+    "subagents",
+    "monitor"
+  ],
+  "galleryBanner": {
+    "color": "#2563EB",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edtroleis/vscode-claude-agents-monitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edtroleis/vscode-claude-agents-monitor/issues"
+  },
+  "homepage": "https://github.com/edtroleis/vscode-claude-agents-monitor#readme",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "claudeAgents",
+          "title": "Claude Agents",
+          "icon": "media/robot.svg"
+        }
+      ]
+    },
+    "views": {
+      "claudeAgents": [
+        {
+          "id": "claudeAgentsMonitor",
+          "name": "Claude Agents"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "claudeAgentsMonitor.refresh",
+        "title": "Claude Agents: Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "claudeAgentsMonitor.openAgentFile",
+        "title": "Claude Agents: Open agent definition"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "claudeAgentsMonitor.refresh",
+          "when": "view == claudeAgentsMonitor",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Claude Agents Monitor",
+      "properties": {
+        "claudeAgentsMonitor.agentsDir": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Folder containing the subagent `.md` files. Empty = `~/.claude/agents`."
+        },
+        "claudeAgentsMonitor.statusFile": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "JSON status file written by the hook. Empty = `~/.claude/agent-status.json`."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src",
+    "pretest": "npm run compile && npm run lint",
+    "test": "mocha",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.0",
+    "eslint": "^9.13.0",
+    "mocha": "^12.0.2",
+    "typescript": "^5.4.0",
+    "typescript-eslint": "^8.10.0"
+  }
+}
