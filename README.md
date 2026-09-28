@@ -38,32 +38,44 @@ subagent is running, for how long, and what ran recently.
 
 ## Enabling live execution (status hook)
 
-The extension reads `~/.claude/agent-status.json`. That file is produced by a Claude Code
-hook on the `Task` tool (the tool Claude uses to launch subagents). Add this to
-`~/.claude/settings.json`:
+The extension reads `~/.claude/agent-status.json`. That file is produced by Claude Code hooks:
+`PreToolUse` on the `Agent` tool (the tool Claude uses to launch subagents; `Task` is its former
+name) remembers the task description, and `SubagentStart` / `SubagentStop` mark when each
+subagent really starts and finishes. This is accurate for **background subagents** too.
+Add this to `~/.claude/settings.json`:
 
 ```json
 {
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Task",
+        "matcher": "Agent|Task",
         "hooks": [
-          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-code-agents-monitor-*/hooks/agent-status-hook.js pre 2>/dev/null || true" }
+          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-code-agents-monitor-*/hooks/agent-status-hook.js launch 2>/dev/null || true" }
         ]
       }
     ],
-    "PostToolUse": [
+    "SubagentStart": [
       {
-        "matcher": "Task",
         "hooks": [
-          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-code-agents-monitor-*/hooks/agent-status-hook.js post 2>/dev/null || true" }
+          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-code-agents-monitor-*/hooks/agent-status-hook.js start 2>/dev/null || true" }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node ~/.vscode/extensions/edtroleis.claude-code-agents-monitor-*/hooks/agent-status-hook.js stop 2>/dev/null || true" }
         ]
       }
     ]
   }
 }
 ```
+
+> **Upgrading from 0.0.2?** The old `PreToolUse`/`PostToolUse` (`pre`/`post`) wiring still works,
+> but it marks background subagents as completed about a second after launch, because
+> `PostToolUse` fires as soon as the launch returns. Replace it with the block above.
 
 > The hook script is bundled with the extension. If you prefer, copy `hooks/agent-status-hook.js`
 > anywhere stable and point the commands at that path instead. After editing settings, open
@@ -82,7 +94,7 @@ atomically.
 ## How it works
 
 ```
-Claude Code (Task tool)
+Claude Code (Agent tool, SubagentStart/Stop)
         │  PreToolUse / PostToolUse hook
         ▼
 ~/.claude/agent-status.json  ◄── written atomically by agent-status-hook.js
@@ -114,7 +126,7 @@ Press **F5** in VS Code to launch the Extension Development Host.
 ## Limitations
 
 - There is no official Claude Code API for "currently running agent"; state comes from the
-  hook on the `Task` tool.
+  hooks on the `Agent` tool and the `SubagentStart`/`SubagentStop` events.
 - Parallel subagents of the **same** type in the **same** session may pair start/stop out of
   order (best-effort matching).
 
