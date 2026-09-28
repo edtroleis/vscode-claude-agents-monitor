@@ -66,7 +66,9 @@ group `vscode-publish`) is already a Contributor member of the publisher. You
 only need to let **this** repository's environment sign in as it and copy the
 IDs:
 
-1. Add a federated credential for this repo's `marketplace` environment:
+1. Add a federated credential for this repo's `marketplace` environment. This
+   repo uses GitHub's **immutable** OIDC subject (owner and repo numeric IDs),
+   so the subject must match exactly:
 
    ```bash
    az identity federated-credential create \
@@ -74,9 +76,13 @@ IDs:
      --identity-name vscode-wsl-distro-manager-publisher \
      --resource-group vscode-publish \
      --issuer https://token.actions.githubusercontent.com \
-     --subject repo:edtroleis/vscode-claude-agents-monitor:environment:marketplace \
+     --subject 'repo:edtroleis@31828901/vscode-claude-agents-monitor@1393738788:environment:marketplace' \
      --audiences api://AzureADTokenExchange
    ```
+
+   Confirm the exact subject any time with
+   `gh api repos/edtroleis/vscode-claude-agents-monitor/actions/oidc/customization/sub`
+   (append `:environment:marketplace` to its `sub_claim_prefix`).
 
 2. Store the identity's IDs as variables of the environment (not secrets):
 
