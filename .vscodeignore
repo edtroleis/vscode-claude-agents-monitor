@@ -20,6 +20,9 @@ CONTRIBUTING.md
 SECURITY.md
 media/icon.svg
 
+# README screenshots are served from GitHub raw, not bundled.
+images/**
+
 # Misc
 **/.DS_Store
 *.vsix

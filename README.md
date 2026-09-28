@@ -11,6 +11,8 @@ Claude Code lets you define **subagents** (specialized agents in `~/.claude/agen
 extension lists them and, when paired with a small hook, shows live execution state: which
 subagent is running, for how long, and what ran recently.
 
+![The Claude Agents view: running now, recent runs, and available agents](https://raw.githubusercontent.com/edtroleis/vscode-claude-agents-monitor/main/images/screenshot-sidebar.png)
+
 ## Features
 
 - **Dedicated sidebar view** with three sections:

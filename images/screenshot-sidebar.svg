@@ -1,0 +1,120 @@
+<svg width="900" height="560" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans','Segoe UI',sans-serif">
+  <!-- window -->
+  <rect width="900" height="560" rx="10" fill="#1e1e1e"/>
+
+  <!-- title bar -->
+  <rect width="900" height="34" rx="10" fill="#323233"/>
+  <rect y="24" width="900" height="10" fill="#323233"/>
+  <circle cx="22" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="17" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="17" r="6" fill="#28c840"/>
+  <text x="450" y="21" fill="#9a9a9a" font-size="12" text-anchor="middle">Claude Code Agents Monitor — Visual Studio Code</text>
+
+  <!-- activity bar -->
+  <rect x="0" y="34" width="48" height="526" fill="#333333"/>
+  <!-- active accent -->
+  <rect x="0" y="150" width="2" height="48" fill="#ffffff"/>
+  <!-- robot icon (active) -->
+  <g transform="translate(12,162)" fill="#ffffff">
+    <rect x="7" y="1" width="4" height="6" rx="2"/>
+    <circle cx="9" cy="0.5" r="2.5"/>
+    <rect x="2" y="7" width="20" height="15" rx="4"/>
+    <rect x="0" y="11" width="2.5" height="7" rx="1.2"/>
+    <rect x="21.5" y="11" width="2.5" height="7" rx="1.2"/>
+  </g>
+  <g transform="translate(12,162)" fill="#333333">
+    <circle cx="8" cy="14" r="2"/>
+    <circle cx="16" cy="14" r="2"/>
+  </g>
+  <!-- other dim icons -->
+  <g fill="#858585">
+    <rect x="16" y="70" width="16" height="16" rx="2" fill="none" stroke="#858585" stroke-width="1.5"/>
+    <circle cx="24" cy="112" r="7" fill="none" stroke="#858585" stroke-width="1.5"/><line x1="29" y1="117" x2="33" y2="121" stroke="#858585" stroke-width="1.5"/>
+    <rect x="16" y="250" width="16" height="12" rx="2" fill="none" stroke="#858585" stroke-width="1.5"/>
+  </g>
+
+  <!-- sidebar -->
+  <rect x="48" y="34" width="322" height="526" fill="#252526"/>
+  <text x="66" y="60" fill="#bbbbbb" font-size="11" letter-spacing="0.6">CLAUDE AGENTS</text>
+  <!-- refresh icon -->
+  <g transform="translate(342,50)" stroke="#8c8c8c" stroke-width="1.4" fill="none">
+    <path d="M0 4 A4 4 0 1 1 1 7" /><path d="M0 1 L0 4 L3 4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Group: Running now -->
+  <g transform="translate(60,84)">
+    <path d="M0 3 L6 3 L3 8 Z" fill="#c5c5c5"/>
+    <circle cx="16" cy="5" r="4.5" fill="none" stroke="#e0a72d" stroke-width="1.6"/><path d="M16 2 v3 l2 1" stroke="#e0a72d" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <text x="28" y="9" fill="#e6e6e6" font-size="13" font-weight="600">Running now (1)</text>
+  </g>
+  <!-- running item -->
+  <rect x="48" y="102" width="322" height="26" fill="#04395e"/>
+  <rect x="48" y="102" width="2" height="26" fill="#0e70c0"/>
+  <g transform="translate(86,109)">
+    <circle cx="5" cy="6" r="5" fill="none" stroke="#3794ff" stroke-width="2" stroke-dasharray="18 8"/>
+    <text x="18" y="10" fill="#ffffff" font-size="13">code-reviewer</text>
+    <text x="266" y="10" fill="#9cdcfe" font-size="11" text-anchor="end">12s · wsl-manager</text>
+  </g>
+
+  <!-- Group: Recent -->
+  <g transform="translate(60,146)">
+    <path d="M0 3 L6 3 L3 8 Z" fill="#c5c5c5"/>
+    <circle cx="16" cy="5" r="5" fill="none" stroke="#8c8c8c" stroke-width="1.4"/><path d="M16 2 v3 l2 1" stroke="#8c8c8c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <text x="28" y="9" fill="#e6e6e6" font-size="13" font-weight="600">Recent (2)</text>
+  </g>
+  <g transform="translate(86,171)">
+    <path d="M0 6 l3 3 l6 -7" stroke="#89d185" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="18" y="10" fill="#cccccc" font-size="13">unit-test-writer</text>
+    <text x="266" y="10" fill="#8c8c8c" font-size="11" text-anchor="end">1m03s · api</text>
+  </g>
+  <g transform="translate(86,197)">
+    <path d="M0 6 l3 3 l6 -7" stroke="#89d185" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="18" y="10" fill="#cccccc" font-size="13">debugger</text>
+    <text x="266" y="10" fill="#8c8c8c" font-size="11" text-anchor="end">42s · wsl-manager</text>
+  </g>
+
+  <!-- Group: Available agents -->
+  <g transform="translate(60,236)">
+    <path d="M0 2 L5 5 L0 8 Z" fill="#c5c5c5"/>
+    <g transform="translate(11,0)" stroke="#c5c5c5" stroke-width="1.4"><line x1="2" y1="2" x2="10" y2="2"/><line x1="2" y1="5" x2="10" y2="5"/><line x1="2" y1="8" x2="10" y2="8"/></g>
+    <text x="28" y="9" fill="#e6e6e6" font-size="13" font-weight="600">Available agents (24)</text>
+  </g>
+  <!-- a few listed agents -->
+  <g font-size="13">
+    <g transform="translate(86,261)"><circle cx="4" cy="5" r="4" fill="#7c7c7c"/><text x="16" y="9" fill="#cccccc">api-designer</text></g>
+    <g transform="translate(86,285)"><circle cx="4" cy="5" r="4" fill="#7c7c7c"/><text x="16" y="9" fill="#cccccc">code-reviewer</text></g>
+    <g transform="translate(86,309)"><circle cx="4" cy="5" r="4" fill="#7c7c7c"/><text x="16" y="9" fill="#cccccc">container-best-practices</text></g>
+    <g transform="translate(86,333)"><circle cx="4" cy="5" r="4" fill="#7c7c7c"/><text x="16" y="9" fill="#cccccc">kubernetes-specialist</text></g>
+    <g transform="translate(86,357)"><circle cx="4" cy="5" r="4" fill="#7c7c7c"/><text x="16" y="9" fill="#cccccc">security-auditor</text></g>
+    <g transform="translate(86,381)"><circle cx="4" cy="5" r="4" fill="#7c7c7c"/><text x="16" y="9" fill="#cccccc">terraform-specialist</text></g>
+    <g transform="translate(86,405)"><text x="16" y="9" fill="#6f6f6f" font-style="italic">…and 18 more</text></g>
+  </g>
+
+  <!-- editor area -->
+  <rect x="370" y="34" width="530" height="504" fill="#1e1e1e"/>
+  <!-- tab -->
+  <rect x="370" y="34" width="200" height="30" fill="#1e1e1e"/>
+  <rect x="370" y="34" width="200" height="30" fill="#252526"/>
+  <rect x="370" y="34" width="200" height="2" fill="#3794ff"/>
+  <text x="392" y="53" fill="#d7d7d7" font-size="12">code-reviewer.md</text>
+  <!-- code content (monospace) -->
+  <g font-family="'Noto Sans Mono','DejaVu Sans Mono',monospace" font-size="12.5">
+    <text x="392" y="92" fill="#6a9955">---</text>
+    <text x="392" y="112" fill="#9cdcfe">name<tspan fill="#d4d4d4">: </tspan><tspan fill="#ce9178">code-reviewer</tspan></text>
+    <text x="392" y="132" fill="#9cdcfe">description<tspan fill="#d4d4d4">: </tspan><tspan fill="#ce9178">Review code for</tspan></text>
+    <text x="412" y="150" fill="#ce9178">readability, bugs, security…</text>
+    <text x="392" y="170" fill="#9cdcfe">tools<tspan fill="#d4d4d4">: </tspan><tspan fill="#ce9178">Read, Grep, Glob, Bash</tspan></text>
+    <text x="392" y="190" fill="#6a9955">---</text>
+    <text x="392" y="222" fill="#d4d4d4">You are a senior code reviewer.</text>
+    <text x="392" y="242" fill="#d4d4d4">Give objective, actionable feedback…</text>
+  </g>
+
+  <!-- status bar -->
+  <rect x="0" y="538" width="900" height="22" fill="#0e639c"/>
+  <rect x="0" y="548" width="900" height="12" fill="#0e639c"/>
+  <g transform="translate(14,543)">
+    <circle cx="6" cy="6" r="5" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-dasharray="16 7"/>
+    <text x="18" y="10" fill="#ffffff" font-size="11.5">1 agent</text>
+  </g>
+  <text x="884" y="553" fill="#ffffff" font-size="11.5" text-anchor="end">Claude Code Agents Monitor</text>
+</svg>
