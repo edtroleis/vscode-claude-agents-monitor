@@ -2,7 +2,7 @@
   "name": "claude-code-agents-monitor",
   "displayName": "Claude Code Agents Monitor",
   "description": "List your Claude Code subagents and see which ones are running right now, from a dedicated sidebar view.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "edtroleis",
   "license": "MIT",
   "author": {

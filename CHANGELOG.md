@@ -5,6 +5,25 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.3] - 2026-09-28
+
+### Fixed
+
+- Background subagents showed as completed ~1s after launch and never appeared in
+  **Running now**: `PostToolUse` fires when the launch returns, not when the subagent finishes.
+  The hook now uses `SubagentStart` / `SubagentStop` (new `launch`, `start`, `stop` phases),
+  pairing runs by `agent_id` so parallel agents of the same type are tracked correctly.
+
+### Added
+
+- Pending launches expire after 10 minutes and runs with no stop event are closed as errors
+  after 6 hours, so stale entries never stay in **Running now**.
+
+### Changed
+
+- Documented hook wiring now matches the `Agent` tool (`Task` kept as an alias). The legacy
+  `pre`/`post` phases remain supported.
+
 ## [0.0.2] - 2026-09-28
 
 ### Added
